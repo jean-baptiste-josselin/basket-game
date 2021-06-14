@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico" />
     <title>Exercice 3</title>
     <style>
       * {
@@ -45,7 +44,7 @@
       let score = 0;
       let count = 0;
       let checky = canvas.height;
-      let gamestatus = 2;
+      let gamestatus = 0;
       let donutstatus = 0;
       let cmiddlex = canvas.width / 2;
       let cmiddley = canvas.height / 2;
@@ -123,8 +122,8 @@
 
         if (gamestatus == 2) {
           if (
-            clientX > cmiddlex + 80 &&
-            clientX < cmiddlex + 160 &&
+            clientX > cmiddlex + 200 &&
+            clientX < cmiddlex + 280 &&
             clientY > canvas.height - 85 &&
             clientY < canvas.height - 45
           ) {
@@ -136,9 +135,10 @@
       // Event listener mouse up
       canvas.addEventListener("mouseup", (e) => {
         move = false;
+        console.log(move);
       });
 
-      canvas.addEventListener("mousedown", (e) => {
+      canvas.addEventListener('mousedown', (e) => {
         let clientX = e.offsetX;
         let clientY = e.offsetY;
 
@@ -156,7 +156,7 @@
             }
           }
         }
-      });
+      })
 
       // Event listener mouse move pour bouger le panier
       canvas.addEventListener(
